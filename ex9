@@ -1,0 +1,37 @@
+#예제9
+def temperature_translator(temp, unit):
+
+    # F = C * 1.8 + 32
+    # C = (F-32)/1.8
+    # K = C+273.15
+    C = 0
+    F = 0
+    K = 0
+
+    if unit == "C":
+        C = temp
+        F = C*1.8 + 32
+        K = C + 273.15
+
+    elif unit == "F":
+        F = temp
+        C = (F-32)/1.8
+        K = C+273.15
+
+    elif unit == "K":
+        K = temp
+        C = K - 273.15
+        F = C*1.8 + 32
+
+    else:
+        print("입력이 잘못되었습니다.")
+
+    print(f"화씨는 {F}도")
+    print(f"섭씨는 {C}도")
+    print(f"절대 온도는 {K}도")
+
+
+temp = int(input("온도를 입력하세요: "))
+unit = input("단위(C, F, K 중 하나)를 입력하세요: ")
+
+temperature_translator(temp, unit)
